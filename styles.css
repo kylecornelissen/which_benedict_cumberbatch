@@ -105,6 +105,13 @@ label {
   opacity: 1;
 }
 
+.empty-input-message {
+  margin-top: 1%;
+  color: red;
+  font-weight: 700;
+  font-size: 25px;
+}
+
 /* WELCOME INSTRUCTIONS */
 .welcome-instructions {
   padding: 5% 20%;
