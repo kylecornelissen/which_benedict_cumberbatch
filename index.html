@@ -9,27 +9,26 @@
   </head>
   <body>
     <header>
-      <image class="hamburger-menu-btn" src="./images/nav-button.png" alt="menu" />
+      <img class="hamburger-menu-btn" src="./images/nav-button.png" alt="menu" />
       <h1 class="head">Which Benedict Cumberbatch</h1>
     </header>
     <form class="player-input-form cumber-background">
       <section class="input-container">
         <div class="player-name-container">
-          <input class="player-name-input" type="text" value="" maxlength="32"></input>
-          <label class="player-name-label" for="title">Player 1</label>
+          <input class="player-name-input player-one-name" type="text" value="" maxlength="32"></input>
+          <label class="player-name-label" for="player">Player 1</label>
         </div>
         <div class="player-name-container player-name-container-right">
-          <input class="player-name-input" type="text" value="" maxlength="32"></input>
-          <label class="player-name-label" for="title">Player 2</label>
+          <input class="player-name-input player-two-name" type="text" value="" maxlength="32"></input>
+          <label class="player-name-label" for="player">Player 2</label>
         </div>
       </section>
-      <button class="play-game-btn" type="button" name="button" disabled>Play Game</button>
+      <button class="play-game-btn" type="button" name="button">Play Game</button>
     </form>
-    <main>
       <section class="welcome-instructions cumber-background">
         <h1 class="welcome-head">Welcome <span>PLAYER_1</span> and <span>PLAYER_2</span></h1>
         <p class="instructions">The goal of the game is to find all 5 pairs of cards as quickly as possible.
-        The player that finds the greatest number of pairs, wins.</p>
+          The player that finds the greatest number of pairs, wins.</p>
         <p class="instructions">To begin playing, the player whose name is highlighted can click any card in the card pile.
           It will flip over and reveal a picture of Benedict Cumberbatch.
           Click another card.
@@ -39,6 +38,6 @@
         <p class="instructions">After you play, you'll see the name of the final winner and how long it took to win the game.</p>
         <button class="play-game-btn" type="button" name="button-two" disabled>Play Game</button>
       </section>
-    </main>
+    <script src="./main.js"></script>
   </body>
 </html>
