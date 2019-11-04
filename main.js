@@ -4,6 +4,7 @@ var playerTwoInput = document.querySelector(".player-two-name");
 var playGameBtn = document.querySelector(".play-game-btn");
 var playerInputForm = document.querySelector(".player-input-form");
 var welcomeSection = document.querySelector(".welcome-instructions");
+var emptyInputMessage = document.querySelector(".empty-input-message");
 
 formParent.addEventListener('click', onFormParentClick);
 playerOneInput.addEventListener('keyup', onInputEntry);
@@ -13,11 +14,12 @@ function onFormParentClick() {
   if (event.target.classList.contains("enable-play-game-btn")) {
     storePlayerNames();
   } else if (event.target.className === "play-game-btn") {
-    alert ("Both Player Names Need to be Entered to Continue");
+    emptyInputMessage.innerText = "Both Player Names Need to be Entered to Continue";
   }
 }
 
 function onInputEntry() {
+  emptyInputMessage.innerText = "";
   if (playerOneInput.value && playerTwoInput.value) {
     playGameBtn.classList.add("enable-play-game-btn");
   } else {
@@ -28,6 +30,8 @@ function onInputEntry() {
 function storePlayerNames() {
   localStorage.setItem("playerOneName", playerOneInput.value);
   localStorage.setItem("playerTwoName", playerTwoInput.value);
+  document.getElementById("player-one-name").innerText = playerOneInput.value;
+  document.getElementById("player-two-name").innerText = playerTwoInput.value;
   playerInputForm.style.display = "none";
   welcomeSection.style.display = "flex";
 }
