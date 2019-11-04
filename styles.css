@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Open Sans';
+  margin: 0px;
+  padding: 0px;
+}
+
+/* HEADER */
+header {
+  border-bottom: 0px;
+  box-shadow: 0px -20px 20px 10px black;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 5%;
+}
+
+.hamburger-menu-btn {
+  width: 7.7%;
+  padding: 0.4% 0.9%;
+  background: black;
+  cursor: pointer;
+}
+
+h1 {
+  text-transform: uppercase;
+  width: 100%;
+  text-align: center;
+  align-self: center;
+}
