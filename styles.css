@@ -84,22 +84,20 @@ label {
 }
 
 .play-game-btn {
-  background: lightgray;
-  border: 3px solid gray;
+  background: black;
+  border: none;
   color: gray;
   cursor: not-allowed;
   padding: 1.26%;
   font-size: 25px;
   font-weight: 700;
-  opacity: 0.5;
+  opacity: 0.2;
   text-transform: uppercase;
   margin-top: 12%;
   width: 100%;
 }
 
 .enable-play-game-btn {
-  background: black;
-  border: none;
   color: white;
   cursor: pointer;
   opacity: 1;
