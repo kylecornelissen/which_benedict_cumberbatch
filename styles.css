@@ -6,10 +6,14 @@
 }
 
 body {
+
+}
+
+.cumber-background {
   background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url("./images/cumber-background.png");
-  background-size: cover;
+  background-size: 100%;
   background-repeat: no-repeat;
-  width: 100%;
+  background-attachment: fixed;
 }
 
 /* HEADER */
@@ -19,6 +23,8 @@ header {
   display: flex;
   flex-direction: row;
   background: white;
+  position: relative;
+  width: 100%;
 }
 
 .hamburger-menu-btn {
@@ -28,7 +34,7 @@ header {
   cursor: pointer;
 }
 
-h1 {
+.head {
   align-self: center;
   text-align: center;
   text-transform: uppercase;
@@ -38,7 +44,7 @@ h1 {
 
 /* FORM */
 .player-input-form {
-  padding: 5% 20%;
+  padding: 5% 20% 20%;
   display: flex;
   /* display: none; */
   flex-direction: column;
@@ -51,7 +57,7 @@ h1 {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: 15% 0% 12%;
+  margin: 15% 0% 0%;
   width: 100%;
 }
 
@@ -68,6 +74,7 @@ h1 {
 .player-name-input {
   border: none;
   font-size: 25px;
+  font-weight: 700;
   padding: 3%;
   width: 100%;
 }
@@ -88,6 +95,28 @@ label {
   font-size: 25px;
   font-weight: 700;
   text-transform: uppercase;
-  margin-bottom: 20%;
+  margin-top: 12%;
   width: 100%;
+}
+
+/* WELCOME INSTRUCTIONS */
+.welcome-instructions {
+  padding: 5% 20%;
+  display: flex;
+  /* display: none; */
+  flex-direction: column;
+  width: 100%;
+}
+
+.welcome-head {
+  font-size: 32px;
+  padding: 5%;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.instructions {
+  margin: 2.5% 0%;
+  font-size: 24.6px;
 }
