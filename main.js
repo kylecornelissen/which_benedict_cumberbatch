@@ -5,10 +5,14 @@ var playGameBtn = document.querySelector(".play-game-btn");
 var playerInputForm = document.querySelector(".player-input-form");
 var welcomeSection = document.querySelector(".welcome-instructions");
 var emptyInputMessage = document.querySelector(".empty-input-message");
+var instructionsSectionParent = document.querySelector(".welcome-instructions");
+var winnerScreenSectionParent = document.querySelector(".winner-screen");
 
 formParent.addEventListener('click', onFormParentClick);
 playerOneInput.addEventListener('keyup', onInputEntry);
 playerTwoInput.addEventListener('keyup', onInputEntry);
+instructionsSectionParent.addEventListener('click', onInstructionsSectionParentClick);
+
 
 function onFormParentClick() {
   if (event.target.classList.contains("enable-play-game-btn")) {
@@ -18,9 +22,17 @@ function onFormParentClick() {
   }
 }
 
+function onInstructionsSectionParentClick() {
+  console.log(event.target.classList.contains("welcome-btn"));
+  if (event.target.classList.contains("welcome-btn")) {
+    welcomeSection.style.display = "none";
+    winnerScreenSectionParent.style.display = "flex";
+  }
+}
+
 function onInputEntry() {
-  emptyInputMessage.innerText = "";
   if (playerOneInput.value && playerTwoInput.value) {
+    emptyInputMessage.innerText = "";
     playGameBtn.classList.add("enable-play-game-btn");
   } else {
     playGameBtn.classList.remove("enable-play-game-btn");
