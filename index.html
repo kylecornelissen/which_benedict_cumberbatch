@@ -23,7 +23,7 @@
           <label class="player-name-label" for="player">Player 2</label>
         </div>
       </section>
-      <button class="play-game-btn" type="button" name="button">Play Game</button>
+      <button class="play-game-btn" type="button" name="play-button">Play Game</button>
       <p class="empty-input-message"></p>
     </form>
     <section class="welcome-instructions cumber-background-img">
@@ -37,13 +37,19 @@
         If they don't, you'll have three seconds to look at them before they flip back over.
         Then it's time for the other player to try!</p>
       <p class="instructions">After you play, you'll see the name of the final winner and how long it took to win the game.</p>
-      <button class="play-game-btn enable-play-game-btn" type="button" name="button-two" disabled>Play Game</button>
+      <button class="play-game-btn enable-play-game-btn welcome-btn" type="button" name="play-button-two">Play Game</button>
     </section>
     <main class="game-board">
       <!-- GAME BOARD -->
     </main>
     <section class="winner-screen cumber-background-img">
-      <!-- WINNER SCREEN -->
+      <h1 class="congrats-head">Congratulations, <span>Player_1</span> Wins!</h1>
+      <p class="centered-p bold-p">It took <span class="time">0.00</span> seconds.</p>
+      <p class="centered-p">Click below to keep playing.</p>
+      <div class="end-game-btns">
+        <button class="play-again-btn new-game-btn" type="button" name="new-game">New Game</button>
+        <button class="play-again-btn right-button rematch-btn" type="button" name="rematch">Rematch</button>
+      </div>
     </section>
     <script src="./main.js"></script>
   </body>
