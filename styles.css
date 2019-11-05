@@ -169,11 +169,43 @@ p {
   padding: 8%;
 }
 
-.cards-container {
-  border: 2px solid blue;
-  height: 600px;
-  margin: 2%;
+.card-table{
+  display: flex;
+  flex-direction: column;
+  margin: 2% 0%;
   width: 100%;
+}
+
+.cards-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 240px;
+  padding: 2.5%;
+  width: 100%;
+}
+
+.card {
+  background: #79ABED url("./images/cumberface.png");
+  background-repeat: space;
+  background-size: 24%;
+  background-blend-mode: luminosity;
+  border: 3px solid rgba(57,62,104,1);
+  border-radius: 7px;
+  cursor: pointer;
+  height: 100%;
+  -webkit-transition: all 600ms;
+  transition: all 600ms;
+  width: 17%;
+  /* box-shadow: inset 0 0 10px rgba(57,62,104,1); */
+}
+
+.card:hover {
+  -webkit-transform: rotateX(30deg);
+  transform: rotateX(30deg);
+  -webkit-transition: all 600ms;
+  transition: all 600ms;
+  box-shadow: 0 20px 20px rgba(0,0,0,.6), inset 0 0 20px rgba(57,62,104,0.7);
 }
 
 /* WINNER SCREEN */
