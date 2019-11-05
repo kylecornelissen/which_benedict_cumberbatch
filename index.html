@@ -12,7 +12,7 @@
       <img class="hamburger-menu-btn" src="./images/nav-button.png" alt="menu" />
       <h1 class="head">Which Benedict Cumberbatch</h1>
     </header>
-    <form class="player-input-form cumber-background">
+    <form class="player-input-form cumber-background-img">
       <section class="input-container">
         <div class="player-name-container">
           <input class="player-name-input player-one-name" type="text" value="" maxlength="32"></input>
@@ -23,22 +23,34 @@
           <label class="player-name-label" for="player">Player 2</label>
         </div>
       </section>
-      <button class="play-game-btn" type="button" name="button">Play Game</button>
+      <button class="play-game-btn" type="button" name="play-button">Play Game</button>
       <p class="empty-input-message"></p>
     </form>
-      <section class="welcome-instructions cumber-background">
-        <h1 class="welcome-head">Welcome <span id="player-one-name">PLAYER_1</span> and <span id="player-two-name">PLAYER_2</span></h1>
-        <p class="instructions">The goal of the game is to find all 5 pairs of cards as quickly as possible.
-          The player that finds the greatest number of pairs, wins.</p>
-        <p class="instructions">To begin playing, the player whose name is highlighted can click any card in the card pile.
-          It will flip over and reveal a picture of Benedict Cumberbatch.
-          Click another card.
-          If they match, they will disappear and you will have completed a match!
-          If they don't, you'll have three seconds to look at them before they flip back over.
-          Then it's time for the other player to try!</p>
-        <p class="instructions">After you play, you'll see the name of the final winner and how long it took to win the game.</p>
-        <button class="play-game-btn" type="button" name="button-two" disabled>Play Game</button>
-      </section>
+    <section class="welcome-instructions cumber-background-img">
+      <h1 class="welcome-head">Welcome <span id="player-one-name">PLAYER_1</span> and <span id="player-two-name">PLAYER_2</span></h1>
+      <p class="instructions">The goal of the game is to find all 5 pairs of cards as quickly as possible.
+        The player that finds the greatest number of pairs, wins.</p>
+      <p class="instructions">To begin playing, the player whose name is highlighted can click any card in the card pile.
+        It will flip over and reveal a picture of Benedict Cumberbatch.
+        Click another card.
+        If they match, they will disappear and you will have completed a match!
+        If they don't, you'll have three seconds to look at them before they flip back over.
+        Then it's time for the other player to try!</p>
+      <p class="instructions">After you play, you'll see the name of the final winner and how long it took to win the game.</p>
+      <button class="play-game-btn enable-play-game-btn welcome-btn" type="button" name="play-button-two">Play Game</button>
+    </section>
+    <main class="game-board">
+      <!-- GAME BOARD -->
+    </main>
+    <section class="winner-screen cumber-background-img">
+      <h1 class="congrats-head">Congratulations, <span>Player_1</span> Wins!</h1>
+      <p class="centered-p bold-p">It took <span class="time">0.00</span> seconds.</p>
+      <p class="centered-p">Click below to keep playing.</p>
+      <div class="end-game-btns">
+        <button class="play-again-btn new-game-btn" type="button" name="new-game">New Game</button>
+        <button class="play-again-btn right-button rematch-btn" type="button" name="rematch">Rematch</button>
+      </div>
+    </section>
     <script src="./main.js"></script>
   </body>
 </html>
