@@ -1,6 +1,6 @@
 class Card {
-  constructor(info) {
-    this.id = id || Date.now();
-    this.imagePath = info.imagePath;
+  constructor(data) {
+    this.id = data.id;
+    this.name = data.name;
   }
 }
