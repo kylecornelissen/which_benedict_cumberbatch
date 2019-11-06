@@ -245,7 +245,19 @@ p {
 .hidden-card {
   visibility: hidden;
   opacity: 0;
-  transition: visibility 0ms linear 2000ms, opacity 2000ms;
+  transition: visibility 0ms linear 600ms, opacity 600ms;
+}
+
+.game-timer {
+  background: #000;
+  border: 3px solid #79ABED;
+  border-radius: 10px;
+  color: #79ABED;
+  font-size: 28px;
+  margin: 1%;
+  padding: 1% 3%;
+  position: fixed;
+  bottom: 0;
 }
 
 /* WINNER SCREEN */
