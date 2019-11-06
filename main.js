@@ -1,18 +1,21 @@
 var formParent = document.querySelector(".player-input-form");
 var playerOneInput = document.querySelector(".player-one-name");
 var playerTwoInput = document.querySelector(".player-two-name");
+var playerScore = 0;
 var playGameBtn = document.querySelector(".play-game-btn");
 var playerInputForm = document.querySelector(".player-input-form");
 var welcomeSection = document.querySelector(".welcome-instructions");
 var emptyInputMessage = document.querySelector(".empty-input-message");
 var instructionsSectionParent = document.querySelector(".welcome-instructions");
-var winnerScreenSectionParent = document.querySelector(".winner-screen");
-var cardTableSectionParent = document.querySelector(".card-table");
 var gameBoardSectionParent = document.querySelector(".game-board");
+var cardTableSectionParent = document.querySelector(".card-table");
+var flipCount = 0;
+var cardIdList = [];
+var winnerScreenSectionParent = document.querySelector(".winner-screen");
 
 formParent.addEventListener('click', onFormParentClick);
 instructionsSectionParent.addEventListener('click', onInstructionsSectionParentClick);
-cardTableSectionParent.addEventListener('click', flipCard);
+cardTableSectionParent.addEventListener('click', move);
 playerOneInput.addEventListener('keyup', onInputEntry);
 playerTwoInput.addEventListener('keyup', onInputEntry);
 
@@ -93,10 +96,42 @@ function setPlayerNames() {
   document.querySelector(".match-player-two-name").innerText = playerTwoInput.value;
 }
 
-function flipCard() {
-  if (event.target.classList.contains("card__face--front")) {
+function move() {
+  if (event.target.classList.contains("card__face--front") && flipCount < 2) {
+    flipCount++
     var card = event.target.closest(".card");
-    card.classList.toggle('is-flipped');
-    card.style.background = "none";
+    cardIdList.push(flipCard(card));
   }
+  setTimeout(function() {
+    if (flipCount === 2) verifyFlips(cardIdList);
+  }, 3000);
+}
+
+function flipCard(card) {
+  card.classList.toggle("is-flipped");
+  card.classList.toggle("no-card-background");
+  return card.querySelector("img").id;
+}
+
+function verifyFlips(ids) {
+  var flippedCards = document.querySelectorAll(".is-flipped");
+  if (ids[0] !== ids[1]) {
+    for (var i = 0; i < flippedCards.length; i++) {
+      flipCard(flippedCards[i]);
+    }
+  } else if (ids[0] === ids[1]) {
+    gotMatch(flippedCards);
+  }
+  flipCount = 0;
+  cardIdList = [];
+}
+
+function gotMatch(cards) {
+  for (var i = 0; i < cards.length; i++) {
+    cards[i].classList.toggle("hidden-card");
+    cards[i].querySelector("img").classList.toggle("hidden-card");
+  }
+  playerScore++;
+  document.querySelector(".match-count-one").innerText = playerScore;
+  // if playerScore ()
 }
