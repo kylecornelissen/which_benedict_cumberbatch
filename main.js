@@ -9,9 +9,13 @@ var emptyInputMessage = document.querySelector(".empty-input-message");
 var instructionsSectionParent = document.querySelector(".welcome-instructions");
 var gameBoardSectionParent = document.querySelector(".game-board");
 var cardTableSectionParent = document.querySelector(".card-table");
-var flipCount = 0;
+var moves = 0;
 var cardIdList = [];
 var winnerScreenSectionParent = document.querySelector(".winner-screen");
+var second = 0, minute = 0;
+var timer = document.querySelector(".timer");
+var gameTimer = document.querySelector(".game-timer");
+var interval;
 
 formParent.addEventListener('click', onFormParentClick);
 instructionsSectionParent.addEventListener('click', onInstructionsSectionParentClick);
@@ -97,14 +101,33 @@ function setPlayerNames() {
 }
 
 function move() {
-  if (event.target.classList.contains("card__face--front") && flipCount < 2) {
-    flipCount++
-    var card = event.target.closest(".card");
+  moves++;
+  if (moves === 1) startTimer();
+  if (event.target.classList.contains("card__face--front") && !event.target.parentElement.classList.contains("is-flipped") && cardIdList.length < 2) {
+    var card = event.target.parentElement;
     cardIdList.push(flipCard(card));
   }
-  setTimeout(function() {
-    if (flipCount === 2) verifyFlips(cardIdList);
-  }, 3000);
+  if (cardIdList.length === 2) {
+    setTimeout(function() {
+      verifyFlips(cardIdList);
+    }, 3000);
+  }
+}
+
+function startTimer(){
+  second = 0, minute = 0;
+  interval = setInterval(function() {
+    gameTimer.innerText = minute + "m, " + second + "s";
+    second++;
+    if(second == 60){
+      minute++;
+      second = 0;
+    }
+    if(minute == 60){
+      hour++;
+      minute = 0;
+    }
+  },1000);
 }
 
 function flipCard(card) {
@@ -119,19 +142,26 @@ function verifyFlips(ids) {
     for (var i = 0; i < flippedCards.length; i++) {
       flipCard(flippedCards[i]);
     }
-  } else if (ids[0] === ids[1]) {
+  } else if (ids[0] && ids[0] === ids[1]) {
     gotMatch(flippedCards);
   }
-  flipCount = 0;
   cardIdList = [];
 }
 
 function gotMatch(cards) {
   for (var i = 0; i < cards.length; i++) {
-    cards[i].classList.toggle("hidden-card");
-    cards[i].querySelector("img").classList.toggle("hidden-card");
+    cards[i].classList.add("hidden-card");
+    cards[i].querySelector("img").classList.add("hidden-card");
   }
+  scorePoint();
+}
+
+function scorePoint() {
   playerScore++;
   document.querySelector(".match-count-one").innerText = playerScore;
-  // if playerScore ()
+  if (playerScore === 5) {
+    timer.innerText = `${minute} minutes and ${second}`;
+    winnerScreenSectionParent.style.display = "flex";
+    gameBoardSectionParent.style.display = "none";
+  }
 }
