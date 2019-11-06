@@ -43,7 +43,7 @@ header {
 /* FORM */
 .player-input-form {
   align-self: center;
-  display: none;
+  display: flex;
   flex-direction: column;
   padding: 5% 20% 13%;
   width: 100%;
@@ -113,7 +113,7 @@ label {
 /* WELCOME INSTRUCTIONS */
 .welcome-instructions {
   padding: 5% 20%;
-  display: flex;
+  display: none;
   flex-direction: column;
   width: 100%;
 }
