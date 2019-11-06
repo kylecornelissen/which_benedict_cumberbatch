@@ -1,9 +1,7 @@
 var formParent = document.querySelector(".player-input-form");
 var playerOneInput = document.querySelector(".player-one-name");
 var playerTwoInput = document.querySelector(".player-two-name");
-var playerOneScore = 0;
-var playerTwoScore = 0;
-var activePlayerScore = 0;
+var playerScore = 0;
 var playGameBtn = document.querySelector(".play-game-btn");
 var playerInputForm = document.querySelector(".player-input-form");
 var welcomeSection = document.querySelector(".welcome-instructions");
@@ -106,7 +104,7 @@ function move() {
   }
   setTimeout(function() {
     if (flipCount === 2) verifyFlips(cardIdList);
-  }, 2000);
+  }, 3000);
 }
 
 function flipCard(card) {
@@ -121,7 +119,7 @@ function verifyFlips(ids) {
     for (var i = 0; i < flippedCards.length; i++) {
       flipCard(flippedCards[i]);
     }
-  } else {
+  } else if (ids[0] === ids[1]) {
     gotMatch(flippedCards);
   }
   flipCount = 0;
@@ -133,5 +131,7 @@ function gotMatch(cards) {
     cards[i].classList.toggle("hidden-card");
     cards[i].querySelector("img").classList.toggle("hidden-card");
   }
-  // activePlayerScore++;
+  playerScore++;
+  document.querySelector(".match-count-one").innerText = playerScore;
+  // if playerScore ()
 }
