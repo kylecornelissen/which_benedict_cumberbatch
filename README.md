@@ -15,6 +15,9 @@ Which Benedict Cumberbatch is a Front End Module 1 Project at Turing School of S
 - CSS
 - JavaScript
 
+# Test Your Benedict Cumberbatch Skills - Multi-Player Action!
+https://kylecornelissen.github.io/which_benedict_cumberbatch/
+
 # Setup
 - Clone this repository
 - Run open index.html in the terminal command line
